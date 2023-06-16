@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,k;
+    cin >> n >>k;
+    int arr[n];
+    vector<int>p;
+    vector<int>q;
+    for(int i = 0 ; i < n ; i++){
+        cin >> arr[i];
+    }
+    for(int i = 0 ; i < n ; i++){
+        if(arr[i] <= k){
+            p.push_back(arr[i]);
+            if((accumulate(p.begin(),p.end(),0)) > k){
+                p.erase(p.begin());
+            }
+            if((accumulate(p.begin(),p.end(),0)) == k){
+
+                q.push_back(p.size());
+                p.erase(p.begin());
+            }
+        }
+    }
+    
+    cout<<*max(q.begin(),q.end())<<endl;
+
+    return 0;
+}
