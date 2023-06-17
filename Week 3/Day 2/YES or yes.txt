@@ -1,0 +1,56 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()                           /**/
+{
+    int t;
+    cin>>t;
+    while(t--){
+    string st;
+    cin >>st;
+    int c=0;
+    
+        if(st[0] == 'Y' || st[0] == 'y'){
+            c++;
+        }
+            if(st[1] == 'E' || st[1] == 'e'){
+                c++;
+            }
+                if(st[2] == 's' || st[2] == 'S'){
+                    c++;
+                }
+            
+        
+        
+           
+    
+    if(c == 3){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+    }
+/*10
+YES
+yES
+yes
+Yes
+YeS
+Noo
+orZ
+yEz
+Yas
+XES
+*/
+    return 0;
+}
