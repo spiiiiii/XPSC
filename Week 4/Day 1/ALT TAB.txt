@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    string st[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> st[i];
+    }
+
+    unordered_set<string> uniqueStrings;  
+
+    for (int i = n - 1; i >= 0; i--) {
+        if (uniqueStrings.find(st[i]) == uniqueStrings.end()) {
+            uniqueStrings.insert(st[i]);
+            cout << st[i].substr(st[i].length() - 2);
+        }
+    }
+
+    return 0;
+}
