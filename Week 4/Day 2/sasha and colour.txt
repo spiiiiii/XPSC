@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+    int n,sum=0;
+    cin>>n;
+    int ar[n];
+    for(int i = 0 ; i<n ; i++){
+        cin>>ar[i];
+    }
+    sort(ar,ar+n);
+    int l = 0  , r =n-1;
+    while(l<r){
+        sum+=(ar[r] - ar[l]);
+        l++;
+        r--;
+    }
+   
+    cout<<sum<<endl;
+    }
+    return 0;
+}
