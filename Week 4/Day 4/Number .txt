@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+ 
+ 
+using namespace std;
+ 
+int main() {
+    int t;
+    cin >> t;
+ 
+    while (t--) {
+        int n;
+        cin >> n;
+ 
+        int arr[n];
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+ 
+        string st;
+        cin >> st;
+ 
+        unordered_map<int, char> mapping;
+        bool possible = true;
+ 
+        for (int i = 0; i < n; i++) {
+            if (mapping.find(arr[i]) != mapping.end()) {
+                if (mapping[arr[i]] != st[i]) {
+                    possible = false;
+                    break;
+                }
+            } else {
+                mapping[arr[i]] = st[i];
+            }
+        }
+ 
+        if (possible) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
+        }
+    }
+ 
+    return 0;
+}
