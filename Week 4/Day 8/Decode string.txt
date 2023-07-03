@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+    vector<string> p;
+    vector<int> q;
+    int n;
+    cin >> n;
+    string st;
+    cin >> st;
+   // reverse(st.begin(),st.end());
+//   4
+// 1100
+    string b, c,d;
+    for (int i = n-1; i >=0; i--)
+    {
+        
+        b = string(1, st[i]);
+        c = string(1, st[i - 2]);
+        if (b == "0")
+        {
+            d = st.substr(i-2, 2);
+           
+            p.push_back(d);
+        // reverse(p.begin(),p.end());
+            i -= 2;
+        }
+        else
+        {
+            p.push_back(b);
+        }
+    }
+     reverse(p.begin(),p.end());
+    // for (const auto& i : p)
+    // {
+    //     cout << i << " ";
+    // }
+    for (const auto& str : p)
+    {
+        int intValue = stoi(str);
+        q.push_back(intValue);
+    }
+     map<int, char> alphabetMap;
+        for (int i = 1; i <= 26; i++)
+        {
+            alphabetMap[i] = 'a' + i - 1;
+        }
+ 
+        for (int num : q)
+        {
+            cout << alphabetMap[num];
+        }
+        cout << endl;
+    
+    }
+    return 0;
+}

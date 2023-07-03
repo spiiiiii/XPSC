@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+ 
+ 
+using namespace std;
+ 
+int main() {
+    int t;
+    cin >> t;
+ 
+    while (t--) {
+        int n, H, M;
+        cin >> n >> H >> M;
+ 
+        int bedTime = H * 60 + M;  
+ 
+        vector<int> alarms(n);
+        for (int i = 0; i < n; i++) {
+            int h, m;
+            cin >> h >> m;
+            alarms[i] = h * 60 + m;  
+        }
+ 
+        int minSleepTime = 24 * 60;  
+ 
+        for (int i = 0; i < n; i++) {
+            int sleepTime;
+            if (alarms[i] >= bedTime) {
+                sleepTime = alarms[i] - bedTime;
+            } else {
+                sleepTime = 24 * 60 - (bedTime - alarms[i]);
+            }
+ 
+            minSleepTime = min(minSleepTime, sleepTime);  
+        }
+ 
+        int sleepHours = minSleepTime / 60;  
+        int sleepMinutes = minSleepTime % 60;  
+ 
+        cout << sleepHours << " " << sleepMinutes << endl;
+    }
+ 
+    return 0;
+}
