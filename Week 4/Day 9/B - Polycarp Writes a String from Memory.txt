@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+    string st,c;
+    cin >> st;    // lollipops
+    set<char> s;
+    
+    int d=0;
+
+    for (int i = 0; i < st.size(); i++) {
+        s.insert(st[i]);
+        if(s.size()>3){
+            d++;
+            s.clear();
+            s.insert(st[i]);
+        }
+        
+        }
+    
+
+  
+    if(!s.empty()){
+     d++;
+    }
+    
+        cout<<d<<endl;
+    
+    for(auto i: s){
+        cout<<i;
+    }
+    }
+
+    return 0;
+}

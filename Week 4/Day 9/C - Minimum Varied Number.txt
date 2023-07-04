@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+    int n,k=0,mn=0,sum=0;
+    vector<int>p;
+    cin>>n;
+    for(int i = 9 ; i >0 ; i--){
+        
+        if(sum<=n && (sum+i)<=n){
+            sum+=i;
+            p.push_back(i);
+        }
+        
+    }
+    reverse(p.begin(),p.end());
+    for(auto i:p){
+        cout<<i;
+    }
+    cout<<endl;
+    
+    }
+
+    return 0;
+}

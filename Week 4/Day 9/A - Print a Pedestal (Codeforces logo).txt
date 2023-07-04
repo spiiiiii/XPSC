@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+    int n ;
+    cin>>n;
+    int x=0,y=0,z=0,r=0;
+    for(int i = 1 ; i <= n ; i++){
+        y=i;
+         r = n-y;
+        if(r%2==0){
+            x=(r/2)+1;
+        }
+        else{
+            x=((r+1)/2);
+        }
+        z=n-y-x;
+        if(x>0 && y>0 && z>0 && y>x && x>z){
+            break;
+        }
+    }
+    cout<<x<<" "<<y<<" "<<z<<endl;
+    }
+
+    return 0;
+}
