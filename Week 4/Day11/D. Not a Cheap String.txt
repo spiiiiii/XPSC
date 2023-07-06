@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+    string s;
+    cin>>s;
+    int sum=0,p,mx,a;
+    vector<char>q;
+    cin>>p;
+    int n =s.size();
+    string cp = s;
+    sort(cp.begin(),cp.end());
+   
+    for(int i =0 ; i< n;i++){
+        a=s[i]-'a'+1;
+        
+        sum+=a;
+        
+       
+    }
+   // cout<<sum;
+   map<char,int>mp,cur;
+    // for(int i =0 ; i <n;i++){
+        
+    //      if(sum<=p){
+    //          break;
+    //      }
+    while(sum>p){
+         // auto maxChar = max_element(s.begin(), s.end());
+          sum-=(cp.back()-'a')+1;
+          mp[cp.back()]++;
+          cp.pop_back();
+          
+         
+            
+        
+       
+    }
+    
+   
+    for(int i =0 ; i< n;i++){
+     if(cur[s[i]]>=mp[s[i]]){
+         cout<<s[i];
+         continue;
+     }
+     cur[s[i]]++;
+    }
+     cout<<endl;
+    }
+   
+ 
+    return 0;
+}
