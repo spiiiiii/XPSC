@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+
+ 
+using namespace std;
+ 
+int main()
+{
+    int t;
+    cin >> t;
+    
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        
+        map<int, int> p;
+        for (int i = 1; i <= n; i++)
+        {
+            int m;
+            cin >> m;
+            
+            for (int j = 1; j <= m; j++)
+            {
+                int x;
+                cin >> x;
+                p[x] = i;
+            }
+        }
+        
+        vector<int> ans(n + 1, -1);
+        for (auto [v, last] : p)
+        {
+            if (ans[last] == -1)
+            {
+                ans[last] = v;
+            }
+        }
+        
+        bool pos = true;
+        for (int i = 1; i <= n; i++)
+        {
+            if (ans[i] == -1)
+            {
+                pos = false;
+                break;
+            }
+        }
+        
+        if (!pos)
+        {
+            cout << -1 << endl;
+        }
+        else
+        {
+            for (int i = 1; i <= n; i++)
+            {
+                cout << ans[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+ 
+    return 0;
+}
