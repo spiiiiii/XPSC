@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t;cin>>t;
+    while(t--){
+    int a,b;cin>>a>>b;
+    if(a-(a*10*.01)<b) cout<<"ONLINE"<<endl;
+    else if(a-(a*10*.01)>b) cout<<"DINING"<<endl;
+    else cout<<"EITHER"<<endl;
+    }
+    return 0;
+}

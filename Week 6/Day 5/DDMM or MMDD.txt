@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;cin>>t;
+    while(t--){
+    string str;
+    cin>>str;
+    string substring = str.substr(0, 2);
+    int number = stoi(substring);
+    string substring1 = str.substr(3, 5);
+    int number1 = stoi(substring1);
+    string substring2 = str.substr(6, 10);
+    int number2 = stoi(substring2);
+     if(number1<=12 && number<=12){
+        cout<<"BOTH"<<endl;
+    }
+    else if(number1<=12){
+        cout<<"DD"<<"/"<<"MM"<<"/"<<"YYYY"<<endl;
+    }
+    else if(number<=12){
+        cout<<"MM"<<"/"<<"DD"<<"/"<<"YYYY"<<endl;
+    }
+    
+    }
+
+    return 0;
+}
