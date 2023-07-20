@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t;cin>>t;
+    while(t--){
+    long long int n;cin>>n;
+    int a = (n+5)/10*10;
+    int c= 100-a;
+    cout<<c<<endl;
+    }
+
+    return 0;
+}
