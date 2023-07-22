@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
+ 
+using namespace std;
+ 
+int main() {
+    int c;cin>>c;
+    while(c--){
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+ 
+    // Create a frequency map
+    map<int, int> f;
+    for (auto i : a) {
+        f[i]++;
+    }
+ 
+    // Create a frequency array
+    vector<int> t(n + 1, 0);
+    for (auto i : f) {
+        for (int j = i.first; j < n + 1; j += i.first) {
+            t[j] += i.second;
+        }
+    }
+ 
+    // Find the maximum frequency
+    int mx = *max_element(t.begin(), t.end());
+    cout << mx<<endl;
+    }
+ 
+    return 0;
+}
