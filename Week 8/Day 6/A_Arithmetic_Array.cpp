@@ -14,7 +14,7 @@ int main()
         if(sum==n){
             cout<<0<<endl;
         }
-        else if (sum<1){
+        else if (sum<n){
             cout<<1<< endl;
         }
         else{
